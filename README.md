@@ -33,10 +33,10 @@ d.` Laravel Boost AI? No ` <br>
 `Locking... ` <br>
 `Installing... ` <br>
 e. `Which database will your application use? mysql`  <br>
-f. Default database updated? Run the default database migration? No  <br>
-Locking...  <br>
-Installing...  <br>
-g. Run npm install --ignore scripts and npm run build? no  <br>
+f. `Default database updated? Run the default database migration? No`  <br>
+`Locking... ` <br>
+`Installing... ` <br>
+g.` Run npm install --ignore scripts and npm run build? no ` <br>
 2. Documents\Development> ```cd inventory_eloquent ``` (change into the 
 project)  <br>
 3. inventory_eloquent>```code .```(Open VS Code )  <br>
@@ -53,7 +53,8 @@ DB_PASSWORD= you need your mysql password here
 (Migrations: create a file in database\migrations called 
 date_create_items_table ) 
 Display this code to the up() function: 
-```Schema::create('items', function (Blueprint $table) { 
+```
+Schema::create('items', function (Blueprint $table) { 
 $table->id(); 
 $table->string('item_name'); 
 $table->string('category')->nullable(); 
@@ -67,8 +68,7 @@ exists it will fail, so you could enter the mysql password into the .env file fi
 5. inventory_eloquent>```php artisan migrate``` (prepare the database and 
 migration table, however if the table already exists it will fail. ) 
 remember to add the mysql password to the .env file and run command 
-"php artisan migrate"  and answer questions:  <br> -The database "eloquent_inventory" does not exit on the mysql 
-connections. would you like to create it? yes  <br>
+"php artisan migrate"  and answer questions:  <br> -`The database "eloquent_inventory" does not exit on the mysql connections. would you like to create it? yes ` <br>
 6. inventory_eloquent>```php artisan make:model Item ```(app\Models\Item.php 
 is created.) 
 mass assignment for the Items.php file with $fillable:
@@ -80,7 +80,7 @@ protected $fillable = ['item_name', 'category', 'quantity', 'purchase_date'];
 ```
 due to timestamps requring additional code we will make $timestamps = 
 false; for this example 
-here is our Models\Items.php file:
+here is our updated Models\Items.php file:
 ```
 <?php 
 namespace App\Models; 
@@ -98,7 +98,8 @@ now populate the table with inserting sample data)  <br>
 'Stationery', 'quantity' => 10, 'purchase_date' => '2024-07-01']); ```                                      
 (Include the path to the file here, for the tinker command) <br>
 (An array will return to confirm the insertion)  <br>
-```= App\Models\Item {#7946                          
+```
+= App\Models\Item {#7946                          
 item_name: "Notebook", 
 category: "Stationery", 
 quantity: 10, 
