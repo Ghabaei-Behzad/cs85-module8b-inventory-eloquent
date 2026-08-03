@@ -60,9 +60,10 @@ $table->string('category')->nullable();
 $table->integer('quantity')->default(0); 
 $table->date('purchase_date')->nullable(); 
 $table->timestamps(); 
-}); ```
+});
+```
 (prepare the database and migration table, however if the table already 
-exists it will fail)  <br>
+exists it will fail)  
 5. inventory_eloquent>```php artisan migrate``` (prepare the database and 
 migration table, however if the table already exists it will fail. ) 
 remember to add the mysql password to the .env file and run command 
