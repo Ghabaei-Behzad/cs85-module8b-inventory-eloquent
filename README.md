@@ -97,15 +97,15 @@ public $timestamps = false;
 protected $fillable = ['item_name', 'category', 'quantity', 'purchase_date']; 
 } 
 ```  
-7. inventory_eloquent>```php artisan tinker ```(tinker is an example of a REPL (Read-Eval-Print Loop), 
-now populate the table with inserting sample data)  <br>
-`
+7. inventory_eloquent>```php artisan tinker ```
+8. Tinker is an example of a REPL (Read-Eval-Print Loop), now populate the table with inserting sample data.  
+```
 > \App\Models\Item::create(['item_name' => 'Notebook', 'category' => 
 'Stationery', 'quantity' => 10, 'purchase_date' => '2024-07-01']);
-`                                   
+```                                   
 (Include the path to the file here, for the tinker command) <br>
 (An array will return to confirm the insertion)
-`
+```
 = App\Models\Item {#7946                          
 item_name: "Notebook", 
 category: "Stationery", 
@@ -113,20 +113,21 @@ quantity: 10,
 purchase_date: "2024-07-01", 
 id: 6, 
 } 
-`
+```
 ( Here is the next insertion) 
-> ` \App\Models\Item::create(['item_name' => 'Wireless Mouse', 'category' => 
-'Electronics', 'quantity' => 2, 'purchase_date' => '2024-07-10']); `
+```
+>  \App\Models\Item::create(['item_name' => 'Wireless Mouse', 'category' => 
+'Electronics', 'quantity' => 2, 'purchase_date' => '2024-07-10']); 
 (This return an array.)
-` = App\Models\Item {#7492 
+ = App\Models\Item {#7492 
 item_name: "Wireless Mouse", 
 category: "Electronics", 
 quantity: 2, 
 purchase_date: "2024-07-10", 
 id: 7, 
 }
-`
-(a screent shot displays the insertions made successfully)
+```
+(a screen shot displays the insertions made successfully)
 > ``` exit  ```  (leave the tinker  REPL (Read-Eval-Print Loop))  <br>
 
 <img width="642" height="218" alt="image" src="https://github.com/user-attachments/assets/bbe642db-5656-4dac-8338-ec9842bcd4f1" />
