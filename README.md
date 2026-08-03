@@ -63,14 +63,14 @@ $table->timestamps();
 });
 ```
 (prepare the database and migration table, however if the table already 
-exists it will fail)  
+exists it will fail, you could enter the mysql password into the .env file first and when running "php artisan migrate" if the tble does not exist then say yes to create it when the prompt appears.)   <br>
 5. inventory_eloquent>```php artisan migrate``` (prepare the database and 
 migration table, however if the table already exists it will fail. ) 
 remember to add the mysql password to the .env file and run command 
-"php artisan migrate"  <br> and answer questions: -The database "eloquent_inventory" does not exit on the mysql 
+"php artisan migrate"  and answer questions:  <br> -The database "eloquent_inventory" does not exit on the mysql 
 connections. would you like to create it? yes  <br>
 6. inventory_eloquent>```php artisan make:model Item ```(app\Models\Item.php 
-is created.)  <br>
+is created.) 
 mass assignment for the Items.php file with $fillable:
 ```
 class Item extends Model 
@@ -90,7 +90,7 @@ class Item extends Model
 public $timestamps = false;   
 protected $fillable = ['item_name', 'category', 'quantity', 'purchase_date']; 
 } 
-```  <br>
+```  
 7. inventory_eloquent>```php artisan tinker ```(tinker is an example of a REVL, 
 now populate the table with inserting sample data)  <br>
 
