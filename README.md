@@ -30,12 +30,12 @@ a. ` Update Now? no ` <br>
 b. `Starter Kit? None ` <br>
 c. `Testing framework? Pest ` <br>
 d.` Laravel Boost AI? No ` <br>
-`Locking... ` <br>
-`Installing... ` <br>
+Locking...  <br>
+Installing...  <br>
 e. `Which database will your application use? mysql`  <br>
 f. `Default database updated? Run the default database migration? No`  <br>
-`Locking... ` <br>
-`Installing... ` <br>
+Locking...  <br>
+Installing...  <br>
 g.` Run npm install --ignore scripts and npm run build? no ` <br>
 2. Documents\Development> ```cd inventory_eloquent ``` (change into the 
 project)  <br>
@@ -107,7 +107,8 @@ purchase_date: "2024-07-01",
 id: 6, 
 } 
 ```
->``` \App\Models\Item::create(['item_name' => 'Wireless Mouse', 'category' => 
+( Here is the next insertion) <br>
+> ``` \App\Models\Item::create(['item_name' => 'Wireless Mouse', 'category' => 
 'Electronics', 'quantity' => 2, 'purchase_date' => '2024-07-10']); ```  <br>
 ``` = App\Models\Item {#7492 
 item_name: "Wireless Mouse", 
@@ -115,8 +116,10 @@ category: "Electronics",
 quantity: 2, 
 purchase_date: "2024-07-10", 
 id: 7, 
-} ```
->``` exit  ```  (leave the tinker  REPL (Read-Eval-Print Loop))  <br>
+}
+```
+> ``` exit  ```  (leave the tinker  REPL (Read-Eval-Print Loop))  <br>
+
 <img width="642" height="218" alt="image" src="https://github.com/user-attachments/assets/bbe642db-5656-4dac-8338-ec9842bcd4f1" />
 
 
@@ -166,13 +169,13 @@ It’s a more modern, scalable way to work with data. --}}
 ```
 Helpful Mysql commands: 
 (In mysql: enter password) 
-```SHOW databases; ```  <br>
-```USE eloquent_inventory; ```  <br>
-```SHOW TABLES; ```  <br>
-```SELECT * FROM users;``` (nothing)  <br>
-```SELECT * FROM items; ``` <br>
-```DESCRIBE users;  ``` <br>
-```DESCRIBE items;  ```  <br>
+``` SHOW databases; ```  <br>
+``` USE eloquent_inventory; ```  <br>
+``` SHOW TABLES; ```  <br>
+``` SELECT * FROM users;``` (nothing)  <br>
+``` SELECT * FROM items; ``` <br>
+``` DESCRIBE users;  ``` <br>
+``` DESCRIBE items;  ```  <br>
 
 
 
