@@ -119,7 +119,7 @@ id: 6,
 >  \App\Models\Item::create(['item_name' => 'Wireless Mouse', 'category' => 
 'Electronics', 'quantity' => 2, 'purchase_date' => '2024-07-10']);
 ```
-(This return an array.)
+(This returns an array.)
 ```
  = App\Models\Item {#7492 
 item_name: "Wireless Mouse", 
@@ -164,7 +164,7 @@ code:
 ```
 Use the right click options on VS Code, or the following,
 run commands "cd resources" then run "cd views" then run "mkdir 
-inventory" then run "cd../.." to come back to the top of the folder. 
+inventory" then run "cd../.." to come back to the top of the folder. <br>
 10. Define a route in the routes\web.php file: 
 ```use App\Http\Controllers\InventoryController; ``` 
 ( if this line is forgotten then InventoryController.php does not exist! )
