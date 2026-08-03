@@ -1,3 +1,158 @@
+Behzad Ghabaei 
+CS 85 PHP 
+Module - Assignment 8B 
+Eloquent_inventory database 
+Instructor Seno  
+7/31/2026 
+Lab Instructions: 
+Understand how Eloquent connects Laravel models to MySQL tables 
+Rebuild an inventory database using Laravel migrations and Eloquent 
+models 
+Use a controller and Blade template to display data 
+Reflect on how ORM changes database workflows 
+Create a new Laravel project 
+Rebuild the items table using a Laravel migration 
+Create and configure an Eloquent model 
+Insert sample data using Laravel Tinker 
+Use a controller to retrieve data 
+Display inventory items using Blade 
+Add a reflection on your experience with Eloquent 
+1. Documents\Development can be found in the Command Prompt under 
+the C:\Users\etc. path 
+run the "laravel new" command first, and call this project 
+inventory_eloquent.  
+C:\Users\Behrooz Ghabaei\Documents\Development>laravel new 
+inventoy_eloquent 
+a. Update Now? no 
+b. Starter Kit? None 
+c. Testing framework? Pest 
+d. Laravel Boost AI? No 
+Locking... 
+Installing... 
+e. Which database will your application use? mysql 
+f. Default database updated? Run the default database migration? No 
+Locking... 
+Installing... 
+g. Run npm install --ignore scripts and npm run build? no 
+2. Documents\Development>cd inventory_eloquent (change into the 
+project) 
+3. inventory_eloquent>code . (Open VS Code ) 
+edit the .env file: 
+DB_CONNECTION=mysql 
+DB_HOST=127.0.0.1 
+DB_PORT=3306 
+DB_DATABASE=inventory_db 
+DB_USERNAME=root 
+DB_PASSWORD= you need your mysql password here 
+4. inventory_eloquent>php artisan make:migration create_items_table 
+(Migrations: create a file in database\migrations called 
+date_create_items_table ) 
+Display this code to the up() function: 
+Schema::create('items', function (Blueprint $table) { 
+$table->id(); 
+$table->string('item_name'); 
+$table->string('category')->nullable(); 
+$table->integer('quantity')->default(0); 
+$table->date('purchase_date')->nullable(); 
+$table->timestamps(); 
+}); 
+(prepare the database and migration table, however if the table already 
+exists it will fail) 
+5. inventory_eloquent>php artisan migrate (prepare the database and 
+migration table, however if the table already exists it will fail. ) 
+remember to add the mysql password to the .env file and run command 
+"php artisan migrate" and answer questions: -The database "eloquent_inventory" does not exit on the mysql 
+connections. would you like to create it? yes 
+6. inventory_eloquent>php artisan make:model Item (app\Models\Item.php 
+is created.) 
+mass assignment for the Items.php file with $fillable: 
+class Item extends Model 
+{ 
+protected $fillable = ['item_name', 'category', 'quantity', 'purchase_date']; 
+} 
+due to timestamps requring additional code we will make $timestamps = 
+false; for this example 
+here is our Models\Items.php file: 
+<?php 
+namespace App\Models; 
+use Illuminate\Database\Eloquent\Model; 
+class Item extends Model 
+{ 
+public $timestamps = false;   
+protected $fillable = ['item_name', 'category', 'quantity', 'purchase_date']; 
+} 
+7. inventory_eloquent>php artisan tinker (tinker is an example of a REVL, 
+now populate the table with inserting sample data) 
+> \App\Models\Item::create(['item_name' => 'Notebook', 'category' => 
+'Stationery', 'quantity' => 10, 'purchase_date' => '2024-07-01']);                                       
+(Include the path to the file here, for the tinker command) 
+= App\Models\Item {#7946                          
+(An array will return to confirm 
+the insertion) 
+item_name: "Notebook", 
+category: "Stationery", 
+quantity: 10, 
+purchase_date: "2024-07-01", 
+id: 6, 
+} 
+> \App\Models\Item::create(['item_name' => 'Wireless Mouse', 'category' => 
+'Electronics', 'quantity' => 2, 'purchase_date' => '2024-07-10']); 
+= App\Models\Item {#7492 
+item_name: "Wireless Mouse", 
+category: "Electronics", 
+quantity: 2, 
+purchase_date: "2024-07-10", 
+id: 7, 
+} 
+> exit    (leave the tinker REVL) 
+8. inventory_eloquent>php artisan make:controller InventoryController (this 
+makes a new file here, at app\Http\Controllers\InventoryController.php) 
+Add this to the InventoryController.php file: 
+use App\Models\Item; // if this line is forgotten then the 
+InventoryController.php file does not exist! 
+public function index() 
+{ 
+$items = Item::all(); 
+return view('inventory.index', ['items' => $items]); 
+} 
+9. make a directory called "inventory" in resources\views and create a 
+blade file template: name this blade file index.blade.php with the following 
+code: 
+<ul> 
+@foreach($items as $item) 
+<li>{{ $item->item_name }} ({{ $item->quantity }}) - {{ $item->category 
+}}</li> 
+@endforeach 
+</ul> 
+run commands "cd resources" then run "cd views" then run "mkdir 
+inventory" then run "cd../.." to come back to the top of the folder. 
+10. Define a route in the routes\web.php file: 
+use App\Http\Controllers\InventoryController;  // if this line is forgotten then 
+InventoryController.php does not exist! 
+Route::get('/inventory', [InventoryController::class, 'index']); 
+11. inventory_eloquent>php artisan serve (to see this table in a browser at 
+http://127.0.0.1:8001) 
+12. place this Reflection comment in the appropriate file 
+resources\views\inventory\index.blade.php with {{--comments--}} syntax 
+and save. 
+{{-- 
+Reflection: 
+Eloquent simplified how I interacted with the database. 
+It helped me write less code and think in objects instead of queries. 
+It’s a more modern, scalable way to work with data. --}} 
+Helpful Mysql commands: 
+(In mysql: enter password) 
+SHOW databases; 
+USE eloquent_inventory; 
+SHOW TABLES; 
+SELECT * FROM users; (nothing) 
+SELECT * FROM items; 
+DESCRIBE users;  
+DESCRIBE items;  
+
+
+
+<!--
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -56,3 +211,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+-->
