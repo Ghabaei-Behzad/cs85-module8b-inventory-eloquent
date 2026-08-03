@@ -48,7 +48,7 @@ DB_PORT=3306
 DB_DATABASE=inventory_db 
 DB_USERNAME=root 
 DB_PASSWORD= you need your mysql password here
-```  <br>
+```  
 4. inventory_eloquent>```php artisan make:migration create_items_table``` 
 (Migrations: create a file in database\migrations called 
 date_create_items_table ) 
