@@ -117,8 +117,10 @@ id: 6,
 ( Here is the next insertion) 
 ```
 >  \App\Models\Item::create(['item_name' => 'Wireless Mouse', 'category' => 
-'Electronics', 'quantity' => 2, 'purchase_date' => '2024-07-10']); 
+'Electronics', 'quantity' => 2, 'purchase_date' => '2024-07-10']);
+```
 (This return an array.)
+```
  = App\Models\Item {#7492 
 item_name: "Wireless Mouse", 
 category: "Electronics", 
@@ -128,7 +130,7 @@ id: 7,
 }
 ```
 (a screen shot displays the insertions made successfully)
-> ``` exit  ```  (leave the tinker  REPL (Read-Eval-Print Loop))  <br>
+```>  exit  ```  (leave the tinker  REPL (Read-Eval-Print Loop))  <br>
 
 <img width="642" height="218" alt="image" src="https://github.com/user-attachments/assets/bbe642db-5656-4dac-8338-ec9842bcd4f1" />
 
