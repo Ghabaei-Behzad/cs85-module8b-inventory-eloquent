@@ -63,7 +63,7 @@ $table->timestamps();
 });
 ```
 (prepare the database and migration table, however if the table already 
-exists it will fail, you could enter the mysql password into the .env file first and when running "php artisan migrate" if the tble does not exist then say yes to create it when the prompt appears.)   <br>
+exists it will fail, so you could enter the mysql password into the .env file first and when running "php artisan migrate" if the tble does not exist then say yes to create it when the prompt appears.)   <br>
 5. inventory_eloquent>```php artisan migrate``` (prepare the database and 
 migration table, however if the table already exists it will fail. ) 
 remember to add the mysql password to the .env file and run command 
