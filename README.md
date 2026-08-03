@@ -26,13 +26,13 @@ run the "laravel new" command first, and call this project
 inventory_eloquent.  
 C:\Users\User's Name\Documents\Development> ```laravel new 
 inventoy_eloquent ```  <br>
-a. Update Now? no  <br>
-b. Starter Kit? None  <br>
-c. Testing framework? Pest  <br>
-d. Laravel Boost AI? No  <br>
-Locking...  <br>
-Installing...  <br>
-e. Which database will your application use? mysql  <br>
+a. ` Update Now? no ` <br>
+b. `Starter Kit? None ` <br>
+c. `Testing framework? Pest ` <br>
+d.` Laravel Boost AI? No ` <br>
+`Locking... ` <br>
+`Installing... ` <br>
+e. `Which database will your application use? mysql`  <br>
 f. Default database updated? Run the default database migration? No  <br>
 Locking...  <br>
 Installing...  <br>
@@ -91,7 +91,7 @@ public $timestamps = false;
 protected $fillable = ['item_name', 'category', 'quantity', 'purchase_date']; 
 } 
 ```  
-7. inventory_eloquent>```php artisan tinker ```(tinker is an example of a REVL, 
+7. inventory_eloquent>```php artisan tinker ```(tinker is an example of a REPL (Read-Eval-Print Loop), 
 now populate the table with inserting sample data)  <br>
 
 >``` \App\Models\Item::create(['item_name' => 'Notebook', 'category' => 
@@ -115,7 +115,7 @@ quantity: 2,
 purchase_date: "2024-07-10", 
 id: 7, 
 } ```
->``` exit  ```  (leave the tinker REVL)  <br>
+>``` exit  ```  (leave the tinker  REPL (Read-Eval-Print Loop))  <br>
 <img width="642" height="218" alt="image" src="https://github.com/user-attachments/assets/bbe642db-5656-4dac-8338-ec9842bcd4f1" />
 
 
