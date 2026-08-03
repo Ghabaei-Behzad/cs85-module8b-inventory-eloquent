@@ -130,15 +130,13 @@ id: 7,
 }
 ```
 (A screen shot displays the insertions made successfully) <br>
-```
-> exit
- ```  (leave the tinker  REPL (Read-Eval-Print Loop))  <br>
 
 <img width="642" height="218" alt="image" src="https://github.com/user-attachments/assets/bbe642db-5656-4dac-8338-ec9842bcd4f1" />
 
 ```
 > exit
  ```  (leave the tinker  REPL (Read-Eval-Print Loop))  <br>
+
 8. inventory_eloquent>```php artisan make:controller InventoryController ``` (This 
 makes a new file here, at app\Http\Controllers\InventoryController.php) 
 Add this to the InventoryController.php file: 
