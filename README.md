@@ -133,9 +133,11 @@ id: 7,
 
 <img width="642" height="218" alt="image" src="https://github.com/user-attachments/assets/bbe642db-5656-4dac-8338-ec9842bcd4f1" />
 
+( If the insertion is not successful, then try creating the mysql table first, migration, then come back to tinker.)
 `
 > exit
- `  (leave the tinker  REPL (Read-Eval-Print Loop))  
+`
+(leave the tinker  REPL (Read-Eval-Print Loop))  <br>
 
 8. inventory_eloquent>```php artisan make:controller InventoryController ``` (This 
 makes a new file here, at app\Http\Controllers\InventoryController.php) 
