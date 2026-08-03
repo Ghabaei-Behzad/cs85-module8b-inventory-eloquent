@@ -139,7 +139,7 @@ id: 7,
 ```
 (leave the tinker  REPL (Read-Eval-Print Loop))  <br>
 
-8. inventory_eloquent>```php artisan make:controller InventoryController ``` (This 
+9. inventory_eloquent>```php artisan make:controller InventoryController ``` (This 
 makes a new file here, at app\Http\Controllers\InventoryController.php) 
 Add this to the InventoryController.php file: 
 ```use App\Models\Item; ```
@@ -151,7 +151,7 @@ $items = Item::all();
 return view('inventory.index', ['items' => $items]); 
 } 
 ```
-9. Make a directory called "inventory" in resources\views and create a 
+10. Make a directory called "inventory" in resources\views and create a 
 blade file template: Name this blade file index.blade.php with the following 
 code: 
 ```
@@ -165,15 +165,17 @@ code:
 Use the right click options on VS Code, or the following,
 run commands "cd resources" then run "cd views" then run "mkdir 
 inventory" then run "cd../.." to come back to the top of the folder. You should have created resources\views\inventory\index.blade.php <br>
-10. Define a route in the routes\web.php file: 
+
+11. Define a route in the routes\web.php file: 
 ```use App\Http\Controllers\InventoryController; ``` 
 ( if this line is forgotten then InventoryController.php does not exist! )
 ```
 Route::get('/inventory', [InventoryController::class, 'index']); 
 ```
-11. inventory_eloquent>```php artisan serve``` (To see this table in a browser at 
+12. inventory_eloquent>```php artisan serve``` (To see this table in a browser at 
 http://127.0.0.1:8001)  Go to ```/inventory```
-12. Place this Reflection comment in the appropriate file: 
+
+13. Place this Reflection comment in the appropriate file: 
 resources\views\inventory\index.blade.php with {{--comments--}} syntax 
 and save. 
 ```
