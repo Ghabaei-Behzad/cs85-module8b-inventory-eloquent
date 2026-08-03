@@ -24,7 +24,7 @@ models
 the C:\Users\etc. path 
 run the "laravel new" command first, and call this project 
 inventory_eloquent.  
-C:\Users\Behrooz Ghabaei\Documents\Development> ```laravel new 
+C:\Users\User's Name\Documents\Development> ```laravel new 
 inventoy_eloquent ```  <br>
 a. Update Now? no  <br>
 b. Starter Kit? None  <br>
