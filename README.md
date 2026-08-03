@@ -135,7 +135,7 @@ id: 7,
 
 ```
 > exit
- ```  (leave the tinker  REPL (Read-Eval-Print Loop))  <br>
+ ```  (leave the tinker  REPL (Read-Eval-Print Loop))  
 
 8. inventory_eloquent>```php artisan make:controller InventoryController ``` (This 
 makes a new file here, at app\Http\Controllers\InventoryController.php) 
