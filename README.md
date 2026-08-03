@@ -164,7 +164,7 @@ code:
 ```
 Use the right click options on VS Code, or the following,
 run commands "cd resources" then run "cd views" then run "mkdir 
-inventory" then run "cd../.." to come back to the top of the folder. <br>
+inventory" then run "cd../.." to come back to the top of the folder. You should have created resources\views\inventory\index.blade.php <br>
 10. Define a route in the routes\web.php file: 
 ```use App\Http\Controllers\InventoryController; ``` 
 ( if this line is forgotten then InventoryController.php does not exist! )
