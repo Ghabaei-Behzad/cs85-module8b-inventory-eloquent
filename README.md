@@ -9,7 +9,7 @@ Instructor Seno   <br>
 2. Rebuild an inventory database using Laravel migrations and Eloquent 
 models 
 3. Use a controller and Blade template to display data 
-Reflect on how ORM changes database workflows 
+4. Reflect on how ORM changes database workflows 
 ### Steps
 1. Create a new Laravel project 
 2. Rebuild the items table using a Laravel migration 
