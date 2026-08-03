@@ -130,11 +130,15 @@ id: 7,
 }
 ```
 (A screen shot displays the insertions made successfully) <br>
->  ```exit  ```  (leave the tinker  REPL (Read-Eval-Print Loop))  <br>
+```
+> exit
+ ```  (leave the tinker  REPL (Read-Eval-Print Loop))  <br>
 
 <img width="642" height="218" alt="image" src="https://github.com/user-attachments/assets/bbe642db-5656-4dac-8338-ec9842bcd4f1" />
 
-
+```
+> exit
+ ```  (leave the tinker  REPL (Read-Eval-Print Loop))  <br>
 8. inventory_eloquent>```php artisan make:controller InventoryController ``` (This 
 makes a new file here, at app\Http\Controllers\InventoryController.php) 
 Add this to the InventoryController.php file: 
@@ -168,7 +172,7 @@ inventory" then run "cd../.." to come back to the top of the folder.
 Route::get('/inventory', [InventoryController::class, 'index']); 
 ```
 11. inventory_eloquent>```php artisan serve``` (To see this table in a browser at 
-http://127.0.0.1:8001) 
+http://127.0.0.1:8001)  Go to ```/inventory```
 12. Place this Reflection comment in the appropriate file: 
 resources\views\inventory\index.blade.php with {{--comments--}} syntax 
 and save. 
