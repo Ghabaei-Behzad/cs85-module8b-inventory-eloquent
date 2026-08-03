@@ -4,12 +4,14 @@ Module - Assignment 8B  <br>
 Eloquent_inventory database  <br>
 Instructor Seno   <br>
 7/31/2026  <br>
+
 ### Lab Instructions Overview:  <br>
 1. Understand how Eloquent connects Laravel models to MySQL tables 
 2. Rebuild an inventory database using Laravel migrations and Eloquent 
 models 
 3. Use a controller and Blade template to display data 
 4. Reflect on how ORM changes database workflows 
+
 ### Steps
 1. Create a new Laravel project 
 2. Rebuild the items table using a Laravel migration 
@@ -37,8 +39,10 @@ f. `Default database updated? Run the default database migration? No`  <br>
 Locking...  <br>
 Installing...  <br>
 g.` Run npm install --ignore scripts and npm run build? no ` <br>
+
 2. Documents\Development> ```cd inventory_eloquent ``` (change into the 
 project)  <br>
+
 3. inventory_eloquent>```code .```(Open VS Code )  <br>
 edit the .env file:  <br>
 ```
@@ -65,10 +69,12 @@ $table->timestamps();
 ```
 (prepare the database and migration table, however if the table already 
 exists it will fail, so you could enter the mysql password into the .env file first and when running "php artisan migrate" if the table does not exist then say yes to create it when the prompt appears.)   <br>
+
 5. inventory_eloquent>```php artisan migrate``` (prepare the database and 
 migration table, however if the table already exists it will fail. ) 
 remember to add the mysql password to the .env file and run command 
 "php artisan migrate"  and answer questions:  <br> -`The database "eloquent_inventory" does not exit on the mysql connections. would you like to create it? yes ` <br>
+
 6. inventory_eloquent>```php artisan make:model Item ```(app\Models\Item.php 
 is created.) 
 mass assignment for the Items.php file with $fillable:
@@ -93,12 +99,13 @@ protected $fillable = ['item_name', 'category', 'quantity', 'purchase_date'];
 ```  
 7. inventory_eloquent>```php artisan tinker ```(tinker is an example of a REPL (Read-Eval-Print Loop), 
 now populate the table with inserting sample data)  <br>
-
->``` \App\Models\Item::create(['item_name' => 'Notebook', 'category' => 
-'Stationery', 'quantity' => 10, 'purchase_date' => '2024-07-01']); ```                                      
+`
+> \App\Models\Item::create(['item_name' => 'Notebook', 'category' => 
+'Stationery', 'quantity' => 10, 'purchase_date' => '2024-07-01']);
+`                                   
 (Include the path to the file here, for the tinker command) <br>
-(An array will return to confirm the insertion)  <br>
-```
+(An array will return to confirm the insertion)
+`
 = App\Models\Item {#7946                          
 item_name: "Notebook", 
 category: "Stationery", 
@@ -106,28 +113,30 @@ quantity: 10,
 purchase_date: "2024-07-01", 
 id: 6, 
 } 
-```
-( Here is the next insertion) <br>
-> ``` \App\Models\Item::create(['item_name' => 'Wireless Mouse', 'category' => 
-'Electronics', 'quantity' => 2, 'purchase_date' => '2024-07-10']); ```  <br>
-``` = App\Models\Item {#7492 
+`
+( Here is the next insertion) 
+> ` \App\Models\Item::create(['item_name' => 'Wireless Mouse', 'category' => 
+'Electronics', 'quantity' => 2, 'purchase_date' => '2024-07-10']); `
+(This return an array.)
+` = App\Models\Item {#7492 
 item_name: "Wireless Mouse", 
 category: "Electronics", 
 quantity: 2, 
 purchase_date: "2024-07-10", 
 id: 7, 
 }
-```
+`
+(a screent shot displays the insertions made successfully)
 > ``` exit  ```  (leave the tinker  REPL (Read-Eval-Print Loop))  <br>
 
 <img width="642" height="218" alt="image" src="https://github.com/user-attachments/assets/bbe642db-5656-4dac-8338-ec9842bcd4f1" />
 
 
-8. ```inventory_eloquent>php artisan make:controller InventoryController ``` (this 
+8. inventory_eloquent>```php artisan make:controller InventoryController ``` (this 
 makes a new file here, at app\Http\Controllers\InventoryController.php) 
 Add this to the InventoryController.php file: 
- ```use App\Models\Item; ```// if this line is forgotten then the 
-InventoryController.php file does not exist! 
+```use App\Models\Item; ```
+(if this line is forgotten then the InventoryController.php file does not exist! )
 ```
 public function index() 
 { 
@@ -135,8 +144,8 @@ $items = Item::all();
 return view('inventory.index', ['items' => $items]); 
 } 
 ```
-9. make a directory called "```inventory``" in resources\views and create a 
-blade file template: name this blade file ```index.blade.php``` with the following 
+9. make a directory called "inventory" in resources\views and create a 
+blade file template: name this blade file index.blade.php with the following 
 code: 
 ```
 <ul> 
@@ -150,8 +159,8 @@ use the right click options on VS Code, or the following,
 run commands "cd resources" then run "cd views" then run "mkdir 
 inventory" then run "cd../.." to come back to the top of the folder. 
 10. Define a route in the routes\web.php file: 
-```use App\Http\Controllers\InventoryController; ``` // if this line is forgotten then 
-InventoryController.php does not exist! 
+```use App\Http\Controllers\InventoryController; ``` 
+( if this line is forgotten then InventoryController.php does not exist! )
 ```
 Route::get('/inventory', [InventoryController::class, 'index']); 
 ```
