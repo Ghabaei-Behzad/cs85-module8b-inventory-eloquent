@@ -67,7 +67,7 @@ $table->date('purchase_date')->nullable();
 $table->timestamps(); 
 });
 ```
-(prepare the database and migration table, however if the table already 
+(Prepare the database and migration table, however if the table already 
 exists it will fail, so you could enter the mysql password into the .env file first and when running "php artisan migrate" if the table does not exist then say yes to create it when the prompt appears.)   <br>
 
 5. inventory_eloquent>```php artisan migrate``` (prepare the database and 
@@ -84,8 +84,8 @@ class Item extends Model
 protected $fillable = ['item_name', 'category', 'quantity', 'purchase_date']; 
 } 
 ```
-due to timestamps requring additional code we will make $timestamps = 
-false; for this example 
+Due to timestamps requring additional code we will make $timestamps = 
+false; for this example, 
 here is our updated Models\Items.php file:
 ```
 <?php 
@@ -98,13 +98,13 @@ protected $fillable = ['item_name', 'category', 'quantity', 'purchase_date'];
 } 
 ```  
 7. inventory_eloquent>```php artisan tinker ```
-8. Tinker is an example of a REPL (Read-Eval-Print Loop), now populate the table with inserting sample data.  
+8. Tinker is an example of a REPL (Read-Eval-Print Loop), now populate the table by inserting sample data.  
 ```
 > \App\Models\Item::create(['item_name' => 'Notebook', 'category' => 
 'Stationery', 'quantity' => 10, 'purchase_date' => '2024-07-01']);
 ```                                   
-(Include the path to the file here, for the tinker command) <br>
-(An array will return to confirm the insertion)
+(Include the path to the file here, for the tinker command.) <br>
+(An array will return to confirm the insertion.)
 ```
 = App\Models\Item {#7946                          
 item_name: "Notebook", 
@@ -114,7 +114,7 @@ purchase_date: "2024-07-01",
 id: 6, 
 } 
 ```
-( Here is the next insertion) 
+( Here is the next insertion.) 
 ```
 >  \App\Models\Item::create(['item_name' => 'Wireless Mouse', 'category' => 
 'Electronics', 'quantity' => 2, 'purchase_date' => '2024-07-10']);
@@ -129,17 +129,17 @@ purchase_date: "2024-07-10",
 id: 7, 
 }
 ```
-(a screen shot displays the insertions made successfully)
-```>  exit  ```  (leave the tinker  REPL (Read-Eval-Print Loop))  <br>
+(A screen shot displays the insertions made successfully) <br>
+>  ```exit  ```  (leave the tinker  REPL (Read-Eval-Print Loop))  <br>
 
 <img width="642" height="218" alt="image" src="https://github.com/user-attachments/assets/bbe642db-5656-4dac-8338-ec9842bcd4f1" />
 
 
-8. inventory_eloquent>```php artisan make:controller InventoryController ``` (this 
+8. inventory_eloquent>```php artisan make:controller InventoryController ``` (This 
 makes a new file here, at app\Http\Controllers\InventoryController.php) 
 Add this to the InventoryController.php file: 
 ```use App\Models\Item; ```
-(if this line is forgotten then the InventoryController.php file does not exist! )
+(If this line is forgotten then the InventoryController.php file does not exist! )
 ```
 public function index() 
 { 
@@ -147,8 +147,8 @@ $items = Item::all();
 return view('inventory.index', ['items' => $items]); 
 } 
 ```
-9. make a directory called "inventory" in resources\views and create a 
-blade file template: name this blade file index.blade.php with the following 
+9. Make a directory called "inventory" in resources\views and create a 
+blade file template: Name this blade file index.blade.php with the following 
 code: 
 ```
 <ul> 
@@ -158,7 +158,7 @@ code:
 @endforeach 
 </ul> 
 ```
-use the right click options on VS Code, or the following,
+Use the right click options on VS Code, or the following,
 run commands "cd resources" then run "cd views" then run "mkdir 
 inventory" then run "cd../.." to come back to the top of the folder. 
 10. Define a route in the routes\web.php file: 
@@ -167,9 +167,9 @@ inventory" then run "cd../.." to come back to the top of the folder.
 ```
 Route::get('/inventory', [InventoryController::class, 'index']); 
 ```
-11. inventory_eloquent>```php artisan serve``` (to see this table in a browser at 
+11. inventory_eloquent>```php artisan serve``` (To see this table in a browser at 
 http://127.0.0.1:8001) 
-12. place this Reflection comment in the appropriate file 
+12. Place this Reflection comment in the appropriate file: 
 resources\views\inventory\index.blade.php with {{--comments--}} syntax 
 and save. 
 ```
@@ -180,7 +180,7 @@ It helped me write less code and think in objects instead of queries.
 It’s a more modern, scalable way to work with data. --}} 
 ```
 Helpful Mysql commands: 
-(In mysql: enter password) 
+(In mysql: enter password) <br>
 ``` SHOW databases; ```  <br>
 ``` USE eloquent_inventory; ```  <br>
 ``` SHOW TABLES; ```  <br>
